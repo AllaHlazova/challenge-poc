@@ -10,7 +10,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
 ## API Example
-  in src/app/services/example.service.ts there is an example for REST API calls
+  in src/app/services/data.service.ts there is an example for REST API calls
 
 
 ## Development server

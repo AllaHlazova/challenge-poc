@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ExampleService } from './services/example.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +8,5 @@ import { ExampleService } from './services/example.service';
 export class AppComponent {
   title = 'frontend';
 
-  constructor(
-    private exampleService: ExampleService
-    ) {
-      setTimeout(() => {
-        this.exampleService.showExample();
-      }, 500);
-    }
+  constructor() {}
 }

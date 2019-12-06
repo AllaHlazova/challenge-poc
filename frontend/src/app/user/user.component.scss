@@ -1,0 +1,43 @@
+.container{
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+h2{
+  text-align: center;
+}
+
+mat-card-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+table{
+  width: 850px;
+}
+
+.information-control{
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card{
+  width: 400px;
+  box-shadow: 0 12px 18px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.12);
+}
+
+.information-buttons{
+  display: flex;
+  justify-content: center;
+}
+
+.information-buttons button{
+  background-color: #B5C2B7;
+  width: 200px;
+}
+
+mat-icon:hover{
+  cursor: pointer;
+}

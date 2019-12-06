@@ -1,0 +1,100 @@
+<div class="jobs-wrapper">
+  <h2>JOBS</h2>
+  <div class="container">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="jobsData">
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>Title</th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdAt">
+          <th mat-header-cell *matHeaderCellDef>Created At</th>
+          <td mat-cell *matCellDef="let element">{{element.createdAt | date: 'medium'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="updatedAt">
+          <th mat-header-cell *matHeaderCellDef>Updated At</th>
+          <td mat-cell *matCellDef="let element">{{element.updatedAt | date: 'medium'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="options">
+          <th mat-header-cell *matHeaderCellDef>
+            Options
+          </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button color="basic" [matMenuTriggerFor]="taskMenu" title="Actions">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #taskMenu="matMenu">
+              <a mat-menu-item (click)="setData(element)">
+                <mat-icon>mode_edit</mat-icon>
+                <span>Edit</span>
+              </a>
+              <button mat-menu-item (click)="deleteJob(element.id)">
+                <mat-icon class="cl-red">delete</mat-icon>
+                <span class="cl-red">Delete</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <mat-card>
+      <mat-card-header>
+        <mat-icon (click)="formReset()" matTooltip="Reset">refresh</mat-icon>
+      </mat-card-header>
+      <mat-card-content>
+        <form [formGroup]="informationControl" class="information-control">
+          <mat-form-field>
+            <input matInput
+                   placeholder="Title:"
+                   autocomplete="off"
+                   id="title"
+                   formControlName="title"
+                   required
+            >
+          </mat-form-field>
+          <mat-form-field class="textarea">
+            <textarea matInput
+                      placeholder="Description:"
+                      autocomplete="off"
+                      id="description"
+                      formControlName="description"
+                      required></textarea>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="information-buttons">
+          <button *ngIf="buttonStatus === 'ADD'"
+                  mat-button
+                  (click)="addJob()"
+                  [disabled]="informationControl.invalid"
+          >Add job
+          </button>
+          <button *ngIf="buttonStatus === 'UPDATE'"
+                  mat-button
+                  (click)="updateData()"
+                  [disabled]="informationControl.invalid"
+          >Update information
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

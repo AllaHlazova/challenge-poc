@@ -1,0 +1,21 @@
+.header-wrapper{
+  background-color: #B5C2B7;
+}
+
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-left{
+  font-size: 20px;
+}
+
+.header-right{
+}
+
+.active{
+  color: #ffffff;
+  background-color: rgba(#ffffff, 0.2);
+}

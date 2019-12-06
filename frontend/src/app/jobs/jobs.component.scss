@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+table {
+  width: 850px;
+}
+
+.mat-card {
+  width: 400px;
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.12);
+}
+
+mat-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.information-control {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field textarea {
+  height: 350px;
+  resize: none;
+}
+
+
+.information-buttons {
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 200px;
+    background-color: #B5C2B7;
+  }
+}
+
+mat-icon {
+  &:hover {
+    cursor: pointer;
+  }
+}
